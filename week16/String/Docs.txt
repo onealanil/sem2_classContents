@@ -21,6 +21,11 @@ Link: https://kjetilod.blogspot.com/2008/09/string-constructor-considered-useles
 2. Geeks for Geeks
 Link : https://www.geeksforgeeks.org/strings-in-java/
 
+3. Setup Java in Vscode
+Link : https://www.youtube.com/watch?v=JPdUiJzIw_M
+
+
+
 
 
  

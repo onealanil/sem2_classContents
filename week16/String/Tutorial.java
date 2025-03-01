@@ -1,106 +1,124 @@
+import java.util.Arrays;
+
 public class Tutorial {
     public static void main(String[] args) {
 
-        /***Defining ths Strings ************** */
-        String name = "Anil";
-        String name1 = new String("Anil");
+        String s = "hell";
+        String s1 = "hello";
+        System.out.println(s1.compareTo(s)); // Output: 1 (difference between 'o' and null)
 
+        int nUnicode = (int) 'n';
+        int oUnicode = (int) 'o';
+        System.out.println(nUnicode); // Output: 110
+        System.out.println(oUnicode); // Output: 111
 
-        /**********breaking string to charArray() */
-        char [] name_char_array = name.toCharArray();
+        /*** Defining the Strings ************** */
+        String x = "Amil";
+        String y = new String("Anil");
+        System.out.println(x.compareTo(y)); // Compare lexicographically
 
+        /********** Breaking string to charArray() **********/
+        char[] name = x.toCharArray();
+        for (char c : name) {
+            System.out.println(c);
+        }
 
-        /************Create char array to string ************ */
-        char [] name_char = {'A', 'n', 'i', 'l'};
-        String name2 = new String(name_char);
+        /************ Create char array to string ************ */
+        String name1 = new String(name);
+        System.out.println(name1.getClass().getSimpleName()); // Output: String
 
-        //getClass().getSimpleName() for getting the variable type
+        /*********** Concatenation ***************/
+        // Using '+' operator
+        String z = "Anil";
+        z = z + " Bhandari";
+        System.out.println(z); // Output: Anil Bhandari
 
+        // Using concat() method
+        String zx = "Anil";
+        zx = zx.concat(" Bhandari");
+        System.out.println("This is zx: " + zx);
 
+        /*********** String comparison ***************/
+        // Using '==' operator
+        String a1 = "Hello";
+        String a2 = "Hello";
+        System.out.println(a1 == a2); // Output: true (same memory reference)
 
-        /************************Some important operation of strings ***************************** */
-        
-        /***********concatenation***************/
+        // Using equals() method
+        String b1 = new String("Hello");
+        System.out.println(a1.equals(b1)); // Output: true
 
-        //Using '+' operator
-        String firstName = "Anil";
-        String lastName = "Bhandari";
-        
+        // Using equalsIgnoreCase() method
+        String c1 = "HELLO";
+        System.out.println(a1.equalsIgnoreCase(c1)); // Output: true
 
-        String fullName = firstName + lastName;  
-        // System.out.println(fullName);
+        // Using compareTo() method
+        System.out.println(a1.compareTo(b1)); // Output: 0 (same strings)
 
-        //Using concat() method
-        String firstName1 = "Samkisha";
-        firstName1 = firstName1.concat(" Adhikari");
-        // System.out.println(firstName1);
+        /************** Substring in Java *************** */
+        String namee = "Anil";
+        System.out.println(namee.substring(2)); // Output: il
 
-        /***********String comparision***************
-        //using '==' operator
+        /************** String length in Java *************** */
+        String name2 = "Anil";
+        System.out.println(name2.length()); // Output: 4
 
+        // charAt() method
+        System.out.println(name2.charAt(1)); // Output: n
 
-        //using equals() method
+        /************** String toLowerCase() and toUpperCase() in Java *************** */
+        System.out.println(name2.toLowerCase()); // Output: anil
+        System.out.println(name2.toUpperCase()); // Output: ANIL
 
-        //using equalsIgnoreCase() method
+        /************** String trim() in Java *************** */
+        String z1 = "           Anil             ";
+        System.out.println(z1.trim()); // Output: "Anil"
 
-        //using compareTo() method
-
-
-        /**************Substring in java *************** */
-        //using substring() method
-
-        //using substring() method with two parameters
-
-
-        /**************String length in java *************** */
-        //using length() method
-
-        //charAt() method
-
-
-        /**************String toLowerCase() and toUpperCase() in java *************** */
-
-
-        /**************String trim() in java *************** */
-
-
-        /**************String replace() in java *************** */
+        /************** String replace() in Java *************** */
         String rep = "abbabbacc";
+        String replaced = rep.replace('b', 'x');
+        System.out.println(replaced); // Output: axxaxxacc
 
-        //index: 4
+        /************** String split() in Java *************** */
+        String sp = "Anil-Bhandari";
+        String[] sp1 = sp.split("-");
+        System.out.println(Arrays.toString(sp1)); // Output: [Anil, Bhandari]
 
-        String rep1 = rep.replace('a', 'b');
-        // System.out.println(rep1);
-        int indexOfb = rep.indexOf('b', 3);
-        String rep2 = rep.substring(0, indexOfb);
-        String rep3 = rep.substring(indexOfb+1);
-        String all = rep2 + "a" + rep3;
-        System.out.println(all);
+        /*************** indexOf() method ***************/
+        System.out.println(rep.indexOf('b')); // Output: 1 (first occurrence)
 
+        /******************* contains() method ***************/
+        System.out.println(rep.contains("abb")); // Output: true
 
-
-        /**************String split() in java *************** */
-        String sp = "Anil Bhandari";
-        String [] sp1 = sp.split(" ");
-        
-
-        /***************indexOf() method */
-   
-
-        /*******************contains() method */
-
-        /******************* getChars()  */
+        /******************* getChars() ***************/
         String name3 = "Anilbhandari";
-        char [] name3_char = new char[6];
+        char[] name3_char = new char[6];
         name3.getChars(0, 5, name3_char, 0);
-        // System.out.println(name3_char);
+        System.out.println(Arrays.toString(name3_char)); // Output: [A, n, i, l, b, h]
 
-        //getChars will copy the characters from the string to the char array.
-        //parameters accepts the starting index, ending index, char array, and starting index of char array.
+        /******************** Breaking strings to char ******************** */
+        char[] charArray = name3.toCharArray();
+        System.out.println(Arrays.toString(charArray));
 
+        /**************** Testing String and StringBuilder Performance ********************/
+        int iterations = 100000;
+        
+        // ==================== String =============================
+        long startTime1 = System.nanoTime();
+        String str = "";
+        for (int i = 0; i < iterations; i++) {
+            str = str + i;
+        }
+        long endTime1 = System.nanoTime();
+        System.out.println("String Execution Time: " + (endTime1 - startTime1) / 1_000_000 + " ms");
 
-        //********************breaking strings to char ******************** */
-        //using toCharArray() method
-
+        // ===================== StringBuilder =========================
+        long startTime2 = System.nanoTime();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < iterations; i++) {
+            sb.append(i);
+        }
+        long endTime2 = System.nanoTime();
+        System.out.println("StringBuilder Execution Time: " + (endTime2 - startTime2) / 1_000_000 + " ms");
     }
 }
