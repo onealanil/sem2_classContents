@@ -1,1 +1,33 @@
 =================================== Swing ====================================
+
+Awt vs Swing 
+
+1. Awt
+-No(Heavy)
+-OS Dependent
+-lower
+-Fewer Component
+
+2. Swing
+- Lightweight
+- Customizable
+- Faster
+- Rich Component
+
+--------------------------Swing Components ----------------------------------------
+JFrame - Main Window
+JPanel - A container for Component
+JDialog - Popup Window
+JScrollPane - Scrollable panel
+
+------------------------ Common Swing component --------------------------------
+Component	Description
+JLabel	- Displays text/images
+JButton	- Clickable button
+JTextField - Single-line text input
+JTextArea - Multi-line text input
+JCheckBox  - Checkbox selection
+JRadioButton - Radio button selection
+JComboBox - Dropdown list
+JList - List of items
+
