@@ -1,6 +1,6 @@
 # Resources for Semester 2 Students
 
-You can find resources (research links, blogs, documentation), weekly content, and coursework references here!
+You can find resources (research links, blogs, documentation), weekly content!
 
 ---
 
