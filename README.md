@@ -139,10 +139,10 @@ _ArrayLists are useful in scenarios where data changes dynamically, such as mana
 Awt vs Swing 
 
 1. Awt
--Not Lightweight (Heavy)
--OS Dependent
--lower
--Fewer Component
+- Not Lightweight (Heavy)
+- OS Dependent
+- lower
+- Fewer Component
 
 2. Swing
 - Lightweight
@@ -151,27 +151,27 @@ Awt vs Swing
 - Rich Component
 
 --------------------------Swing Components ----------------------------------------
-JFrame - Main Window
-JPanel - A container for Component
-JDialog - Popup Window
-JScrollPane - Scrollable panel
+- JFrame - Main Window
+- JPanel - A container for Component
+- JDialog - Popup Window
+- JScrollPane - Scrollable panel
   
 ------------------------ Common Swing component --------------------------------
 Component	Description
-JLabel	- Displays text/images
-JButton	- Clickable button
-JTextField - Single-line text input
-JTextArea - Multi-line text input
-JCheckBox  - Checkbox selection
-JRadioButton - Radio button selection
-JComboBox - Dropdown list
-JList - List of items
+- JLabel	- Displays text/images
+- JButton	- Clickable button
+- JTextField - Single-line text input
+- JTextArea - Multi-line text input
+- JCheckBox  - Checkbox selection
+- JRadioButton - Radio button selection
+- JComboBox - Dropdown list
+- JList - List of items
 
 ----------------- Action Listener ------------------------------------------
-Event --> An action that occurs (click, keypress, etc.).
-Event Source --> The component that generates the event (e.g., JButton).
-Event Listener --> The interface that listens for events (e.g., ActionListener).
-Event Handler --> The method that executes when an event occurs.
+- Event --> An action that occurs (click, keypress, etc.).
+- Event Source --> The component that generates the event (e.g., JButton).
+- Event Listener --> The interface that listens for events (e.g., ActionListener).
+- Event Handler --> The method that executes when an event occurs.
 
 
 ---
