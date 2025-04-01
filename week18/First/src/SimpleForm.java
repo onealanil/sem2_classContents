@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 public class SimpleForm {
 
-    public SimpleForm() {
+    public static void main(String[] args) {
         // Create Frame (Window)
         JFrame frame = new JFrame("Simple Form");
         frame.setSize(400, 350);
@@ -32,10 +32,11 @@ public class SimpleForm {
         JTextArea messageArea = new JTextArea();
         messageArea.setBounds(150, 60, 200, 60);
 
+       String [] countries = {"USA", "Canada", "UK", "Australia", "India"};
         //  Country Dropdown
         JLabel countryLabel = new JLabel("Country:");
         countryLabel.setBounds(30, 140, 100, 25);
-        JComboBox<String> countryBox = new JComboBox<>(new String[]{"USA", "UK", "India"});
+        JComboBox<String> countryBox = new JComboBox<>(countries);
         countryBox.setBounds(150, 140, 200, 25);
 
         // Gender Selection (Radio Buttons)
@@ -54,23 +55,26 @@ public class SimpleForm {
         JButton submitButton = new JButton("Submit");
         submitButton.setBounds(150, 230, 100, 30);
 
-        // Action Listener for Button Click
+        // Action Listener for Button Click 
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String name = nameField.getText();
                 String message = messageArea.getText();
-                String country = countryBox.getSelectedItem().toString();
+                String box = countryBox.getSelectedItem().toString();
+
                 String gender;
                 if (maleButton.isSelected()) {
-                    gender = maleButton.getText();
+                    gender = "male";
                 } else {
-                    gender = femaleButton.getText();
+                    gender = "female";
                 }
 
-                JOptionPane.showMessageDialog(frame, "Name: " + name
+
+                JOptionPane.showMessageDialog(null, "Name: " + name
                         + "\nMessage: " + message
-                        + "\nCountry: " + country
+                        + "\nCountry: " + box
                         + "\nGender: " + gender);
             }
         });
@@ -88,9 +92,5 @@ public class SimpleForm {
         frame.add(submitButton);
 
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new SimpleForm();
     }
 }

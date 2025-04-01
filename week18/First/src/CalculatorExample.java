@@ -57,8 +57,12 @@ public class CalculatorExample {
             public void actionPerformed(ActionEvent e) {
                 // converting string text to double
                 double num1 = Double.parseDouble(num1Field.getText());
+                // String num1 = num1Field.getText();
+
                 // converting string text to double
                 double num2 = Double.parseDouble(num2Field.getText());
+                // double num2 = Double.parseDouble(num2Field.getText());
+
                 double result = 0;
 
                 // System.out.println("e.getSource() is of type: " + e.getSource().getClass().getName());

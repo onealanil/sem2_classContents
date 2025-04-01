@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//java, c, c++
 import javax.swing.*;
 
 public class Calculator {
@@ -183,7 +184,6 @@ public class Calculator {
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // frame.setLayout(null);
         // frame.setResizable(false);
-
         // //texfield
         // // Create display
         // JTextField display = new JTextField();
@@ -191,63 +191,46 @@ public class Calculator {
         // display.setEditable(false);
         // display.setHorizontalAlignment(JTextField.RIGHT);
         // frame.add(display);
-
         // // Create number buttons 
         // JButton btn7 = new JButton("7");
         // btn7.setBounds(20, 80, 60, 50);
-
         // JButton btn8 = new JButton("8");
         // btn8.setBounds(90, 80, 60, 50);
-
         // JButton btn9 = new JButton("9");
         // btn9.setBounds(160, 80, 60, 50);
-
         // JButton btn4 = new JButton("4");
         // btn4.setBounds(20, 140, 60, 50);
-
         // JButton btn5 = new JButton("5");
         // btn5.setBounds(90, 140, 60, 50);
-
         // JButton btn6 = new JButton("6");
         // btn6.setBounds(160, 140, 60, 50);
-
         // JButton btn1 = new JButton("1");
         // btn1.setBounds(20, 200, 60, 50);
-
         // JButton btn2 = new JButton("2");
         // btn2.setBounds(90, 200, 60, 50);
-
         // JButton btn3 = new JButton("3");
         // btn3.setBounds(160, 200, 60, 50);
-
         // JButton btn0 = new JButton("0");
         // btn0.setBounds(90, 260, 60, 50);
-
         // // Create operation buttons
         // JButton btnDivide = new JButton("/");
         // btnDivide.setBounds(230, 80, 60, 50);
         // btnDivide.setBackground(new Color(200, 200, 255));
-
         // JButton btnMultiply = new JButton("*");
         // btnMultiply.setBounds(230, 140, 60, 50);
         // btnMultiply.setBackground(new Color(200, 200, 255));
-
         // JButton btnSubtract = new JButton("-");
         // btnSubtract.setBounds(230, 200, 60, 50);
         // btnSubtract.setBackground(new Color(200, 200, 255));
-
         // JButton btnAdd = new JButton("+");
         // btnAdd.setBounds(230, 260, 60, 50);
         // btnAdd.setBackground(new Color(200, 200, 255));
-
         // JButton btnEquals = new JButton("=");
         // btnEquals.setBounds(160, 260, 60, 50);
         // btnEquals.setBackground(new Color(200, 200, 255));
-
         // JButton btnClear = new JButton("C");
         // btnClear.setBounds(20, 260, 60, 50);
         // btnClear.setBackground(new Color(255, 200, 200));
-
         // // Add all buttons to frame
         // frame.add(btn7);
         // frame.add(btn8);
@@ -265,21 +248,17 @@ public class Calculator {
         // frame.add(btn0);
         // frame.add(btnEquals);
         // frame.add(btnAdd);
-
         // ActionListener listener = new ActionListener() {
         //     @Override
         //     public void actionPerformed(ActionEvent e) {
         //         String button = e.getActionCommand();
         //         display.setText(display.getText() + button);
-
         //         //simple option pane example
         //         // JOptionPane.showMessageDialog(frame, "Hello World!", "Message", JOptionPane.ERROR_MESSAGE);
         //     }
         // };
-
         // btn7.addActionListener(listener);
         // btn8.addActionListener(listener);
-
         // frame.setVisible(true);
     }
 }

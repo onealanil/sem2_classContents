@@ -111,7 +111,7 @@ public class WorkshopExample {
         //  Country Dropdown
         JLabel countryLabel = new JLabel("Country:");
         countryLabel.setBounds(30, 140, 100, 25);
-        JComboBox<String> countryBox = new JComboBox<>(new String[]{"USA", "UK", "India"});
+        JComboBox<String> countryBox = new JComboBox<>(new String[]{"USA", "UK", "India", "Nepal"});
         countryBox.setBounds(150, 140, 200, 25);
 
         // Gender Selection (Radio Buttons)
@@ -133,17 +133,22 @@ public class WorkshopExample {
             public void actionPerformed(ActionEvent e) {
                 String name = nameField.getText();
                 String message = messageArea.getText();
-                String combo = countryBox.getSelectedItem().toString();
+                String box = countryBox.getSelectedItem().toString();
 
                 String gender;
-                if (maleButton.isSelected()) {
-                    gender = "male";
-                } else {
+                if (femaleButton.isSelected()) {
                     gender = "female";
+                } else {
+                    gender = "male";
                 }
 
-                //dialogbox
-                JOptionPane.showMessageDialog(frame, name + "\n" + message + "\n" + combo + gender);
+                // JOptionPane.showMessageDialog(frame, "user clicked me");
+                // System.out.println(name + " "+ message + " "+ box + " " + gender);
+// 
+                // String message = messageArea.getText();
+                // String combo = countryBox.getSelectedItem().toString();
+                // //dialogbox
+                JOptionPane.showMessageDialog(null, name + "\n" + message + "\n" + box + gender , "title", JOptionPane.ERROR_MESSAGE);
             }
         });
 
