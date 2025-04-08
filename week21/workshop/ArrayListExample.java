@@ -54,7 +54,21 @@ class RegualarMember extends FutsalMember {
     }
 }
 
-public class CourseWorkRef {
+class PremiumMember extends FutsalMember {
+
+    private String membershipType;
+
+    public PremiumMember(String name, String id, String phoneNumber, String membershipType) {
+        super(name, id, phoneNumber);
+        this.membershipType = membershipType;
+    }
+
+    public String getMembershipType() {
+        return membershipType;
+    }
+}
+
+public class ArrayListExample {
 
     public static void main(String[] args) {
         ArrayList<FutsalMember> members = new ArrayList<>();
@@ -101,7 +115,8 @@ public class CourseWorkRef {
                     membershipType = "Regular";
                 }
 
-                members.add(new RegualarMember(name, id, phoneNumber, membershipType));
+                RegualarMember newFutsalMember = new RegualarMember(name, id, phoneNumber, membershipType);
+                members.add(newFutsalMember);
                 JOptionPane.showMessageDialog(frame, "Member added successfully!");
 
                 // Clear the fields after adding the member
@@ -135,7 +150,7 @@ public class CourseWorkRef {
                 JOptionPane.showMessageDialog(frame, memberList.toString());
                 // JOptionPane.showMessageDialog(frame, "Name : " + member.getName() + "\nID : " + member.getId() + "\nPhone Number : " + member.getPhoneNumber() + "\nMembership Type : " + ((RegualarMember) member).getMembershipType());
             }
-        });
+        });x
 
         frame.add(label);
         frame.add(nameField);
