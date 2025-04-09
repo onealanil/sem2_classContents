@@ -1,138 +1,15 @@
-package week21.workshop;
+package Example;
 
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-abstract class FutsalMember {
-
-    protected String name;
-    protected String id;
-    protected String phoneNumber;
-    protected boolean activeStatus;
-    protected int attendance;
-
-    public FutsalMember(String name, String id, String phoneNumber) {
-        this.name = name;
-        this.id = id;
-        this.phoneNumber = phoneNumber;
-        this.activeStatus = false;
-        this.attendance = 0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean isActive() {
-        return activeStatus;
-    }
-
-    public abstract void markAttendance();
-
-    public void activeMemberShip() {
-        if (!this.activeStatus) {
-            this.activeStatus = true;
-            System.out.println(name + "'s membership is now active.");
-        } else {
-            System.out.println(name + "'s membership is already active.");
-        }
-    }
-
-    public void deactivateMembership() {
-        if (activeStatus) {
-            activeStatus = false;
-            System.out.println(name + "'s membership is now inactive.");
-        } else {
-            System.out.println(name + "'s membership is already inactive.");
-        }
-    }
-
-    public int getAttendance() {
-        return attendance;
-    }
-
-    public void setAttendance(int attendance) {
-        this.attendance = attendance;
-    }
-
-    public void setActiveStatus(boolean activeStatus) {
-        this.activeStatus = activeStatus;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void display() {
-        System.out.println("Name: " + name);
-        System.out.println("ID: " + id);
-        System.out.println("Phone Number: " + phoneNumber);
-    }
-
-    public void checkFunction(){
-        System.out.println("This is a check function");
-    }
-}
-
-class RegualarMember extends FutsalMember {
-
-    private String membershipType;
-
-    public RegualarMember(String name, String id, String phoneNumber) {
-        super(name, id, phoneNumber);
-        this.membershipType = membershipType;
-    }
-
-    @Override
-    public void markAttendance() {
-        System.out.println("Regular member attendance");
-        if (isActive()) {
-            attendance++;
-            System.out.println(name + "'s attendance marked. Total attendance: " + attendance);
-        } else {
-            System.out.println(name + " cannot mark attendance - membership is inactive.");
-        }
-    }
-
-    public String getMembershipType() {
-        return membershipType;
-    }
-}
-
-class PremiumMember extends FutsalMember {
-
-    private String membershipType;
-
-    public PremiumMember(String name, String id, String phoneNumber) {
-        super(name, id, phoneNumber);
-        this.membershipType = membershipType;
-    }
-
-    @Override
-    public void markAttendance() {
-        System.out.println("premium member attendance");
-        if (isActive()) {
-            attendance++;
-            System.out.println(name + "'s attendance marked. Total attendance: " + super.getAttendance());
-        } else {
-            System.out.println(name + " cannot mark attendance - membership is inactive.");
-        }
-        if (super.getAttendance() == 30) {
-            System.out.println("Congratulations! You have completed 30 days of attendance.");
-        }
-    }
-
-    public String getMembershipType() {
-        return membershipType;
-    }
-}
-
-public class ArrayListExample {
+public class GUI {
 
     public static void main(String[] args) {
         ArrayList<FutsalMember> members = new ArrayList<>();
@@ -264,6 +141,7 @@ public class ArrayListExample {
         //activate button
         activateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                // Assuming you want to activate a member by ID
                 String id = JOptionPane.showInputDialog(frame, "Enter Member ID to activate:");
                 boolean found = false;
                 for (FutsalMember member : members) {
@@ -339,14 +217,6 @@ public class ArrayListExample {
                     memberLabel.setBounds(20, y, 600, 30); // Adjust width as needed
                     panel4.add(memberLabel);
                     y += 35;
-
-                    // Optionally print in console too
-                    member.display();
-                }
-
-                // Refresh the panel to show new labels
-                for(FutsalMember mem: members){
-                    mem.checkFunction();
                 }
 
                 panel4.revalidate(); //updates layout
