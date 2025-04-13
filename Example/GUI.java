@@ -14,40 +14,41 @@ public class GUI {
     public static void main(String[] args) {
         ArrayList<FutsalMember> members = new ArrayList<>();
 
-        //GUI
+        // GUI
         JFrame frame = new JFrame("Futsal Member Registration");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setSize(800, 800);
         frame.setLayout(null);
 
-        //panel1
+        // panel1
         JPanel panel1 = new JPanel();
         panel1.setBounds(50, 50, 700, 400);
         panel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Regular Member Registration"));
         panel1.setLayout(null);
         frame.add(panel1);
 
-        //panel2
+        // panel2
         JPanel panel2 = new JPanel();
         panel2.setBounds(750, 50, 700, 400);
         panel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Premium Member Registration"));
         panel2.setLayout(null);
         frame.add(panel2);
 
-        //panel3 
+        // panel3
         JPanel panel3 = new JPanel();
         panel3.setBounds(50, 500, 700, 400);
         panel3.setLayout(null);
         frame.add(panel3);
 
-        //panel4 display member
+        // panel4 display member
         JPanel panel4 = new JPanel();
         panel4.setBounds(750, 500, 700, 400);
         panel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Display Members"));
         panel4.setLayout(null);
         frame.add(panel4);
 
-        //jlabel
+        // jlabel
         JLabel label = new JLabel("Name: ");
         label.setBounds(50, 50, 100, 30);
         JTextField nameField = new JTextField();
@@ -92,7 +93,7 @@ public class GUI {
         panel1.add(phoneField);
         panel1.add(registerButton);
 
-        //panel2
+        // panel2
         JLabel label2 = new JLabel("Name: ");
         label2.setBounds(50, 50, 100, 30);
         JTextField nameField2 = new JTextField();
@@ -134,11 +135,11 @@ public class GUI {
         panel2.add(phoneField2);
         panel2.add(registerButton2);
 
-        //buttons activate membership
+        // buttons activate membership
         JButton activateButton = new JButton("Activate Membership");
         activateButton.setBounds(50, 50, 200, 30);
 
-        //activate button
+        // activate button
         activateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 // Assuming you want to activate a member by ID
@@ -157,11 +158,11 @@ public class GUI {
             }
         });
 
-        //button to deactivate membership
+        // button to deactivate membership
         JButton deactivateButton = new JButton("Deactivate Membership");
         deactivateButton.setBounds(50, 100, 200, 30);
 
-        //deactivate button
+        // deactivate button
         deactivateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 String id = JOptionPane.showInputDialog(frame, "Enter Member ID to deactivate:");
@@ -179,10 +180,10 @@ public class GUI {
             }
         });
 
-        //mark attendance button
+        // mark attendance button
         JButton markAttendanceButton = new JButton("Mark Attendance");
         markAttendanceButton.setBounds(50, 200, 200, 30);
-        //mark attendance button
+        // mark attendance button
         markAttendanceButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 String id = JOptionPane.showInputDialog(frame, "Enter Member ID to mark attendance:");
@@ -207,20 +208,54 @@ public class GUI {
         display.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                // ============================================ In seperate frame
+                // ========================================================
+                // Separate frame
+                // JFrame frame = new JFrame("Display Members");
+                // frame.setBounds(500, 200, 800, 500);
+                // frame.setLayout(null);
+                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+                // JPanel fp = new JPanel();
+                // fp.setLayout(null); // Important to allow absolute positioning
+                // fp.setBounds(10, 10, 760, 440); // Leave some padding from frame edges
+                // frame.add(fp);
+
+                // int y = 10; // Initial Y position
+                // for (FutsalMember member : members) {
+                // String info = "Name: " + member.getName() + ", ID: " + member.getId()
+                // + ", Phone: " + member.getPhoneNumber() + ", Active status: " +
+                // member.isActive()
+                // + ", Attendance: " + member.getAttendance() + ", Membership Type: "
+                // + (member instanceof RegualarMember ? "Regular" : "Premium");
+
+                // JLabel memberLabel = new JLabel(info);
+                // memberLabel.setBounds(10, y, 740, 30); // Width should fit panel
+                // fp.add(memberLabel);
+                // y += 35;
+                // }
+
+                frame.setVisible(true);
+                // =================================================== In panel
+                // ===========================================================
                 panel4.removeAll(); // Clear previous labels
 
                 int y = 20; // Y position to stack labels vertically
                 for (FutsalMember member : members) {
                     String info = "Name: " + member.getName() + ", ID: " + member.getId()
-                            + ", Phone: " + member.getPhoneNumber() + ", Active status: " + member.isActive() + ", Attendance: " + member.getAttendance() + ", Membership Type: " + (member instanceof RegualarMember ? "Regular" : "Premium");
+                            + ", Phone: " + member.getPhoneNumber() + ", Active status: " +
+                            member.isActive()
+                            + ", Attendance: " + member.getAttendance() + ", Membership Type: "
+                            + (member instanceof RegualarMember ? "Regular" : "Premium");
                     JLabel memberLabel = new JLabel(info);
+                    System.out.println(info);
                     memberLabel.setBounds(20, y, 600, 30); // Adjust width as needed
                     panel4.add(memberLabel);
                     y += 35;
                 }
 
-                panel4.revalidate(); //updates layout
-                panel4.repaint(); //redraws the updated content
+                panel4.revalidate(); // updates layout
+                panel4.repaint(); // redraws the updated content
             }
         });
 
@@ -230,5 +265,6 @@ public class GUI {
         panel3.add(markAttendanceButton);
 
         frame.setVisible(true);
+
     }
 }
