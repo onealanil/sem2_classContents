@@ -1,0 +1,49 @@
+1. Takes a double input.
+
+2. Converts it to int using explicit casting.
+
+3. Then stores it into a float variable (implicit or 
+explicit as needed).
+
+4. Prints all three values and explains the changes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+byte b = 100;
+int i = b;
+System.out.println(i); 
+byte c = (byte) (i + 200); 
+System.out.println(c);
+
+
+10.5, 10, 10.0

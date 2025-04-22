@@ -211,51 +211,51 @@ public class GUI {
                 // ============================================ In seperate frame
                 // ========================================================
                 // Separate frame
-                // JFrame frame = new JFrame("Display Members");
-                // frame.setBounds(500, 200, 800, 500);
-                // frame.setLayout(null);
-                // frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                JFrame frame = new JFrame("Display Members");
+                frame.setBounds(500, 200, 800, 500);
+                frame.setLayout(null);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-                // JPanel fp = new JPanel();
-                // fp.setLayout(null); // Important to allow absolute positioning
-                // fp.setBounds(10, 10, 760, 440); // Leave some padding from frame edges
-                // frame.add(fp);
+                JPanel fp = new JPanel();
+                fp.setLayout(null); // Important to allow absolute positioning
+                fp.setBounds(10, 10, 760, 440); // Leave some padding from frame edges
+                frame.add(fp);
 
-                // int y = 10; // Initial Y position
-                // for (FutsalMember member : members) {
-                // String info = "Name: " + member.getName() + ", ID: " + member.getId()
-                // + ", Phone: " + member.getPhoneNumber() + ", Active status: " +
-                // member.isActive()
-                // + ", Attendance: " + member.getAttendance() + ", Membership Type: "
-                // + (member instanceof RegualarMember ? "Regular" : "Premium");
+                int y = 10; // Initial Y position
+                for (FutsalMember member : members) {
+                String info = "Name: " + member.getName() + ", ID: " + member.getId()
+                + ", Phone: " + member.getPhoneNumber() + ", Active status: " +
+                member.isActive()
+                + ", Attendance: " + member.getAttendance() + ", Membership Type: "
+                + (member instanceof RegualarMember ? "Regular" : "Premium");
 
-                // JLabel memberLabel = new JLabel(info);
-                // memberLabel.setBounds(10, y, 740, 30); // Width should fit panel
-                // fp.add(memberLabel);
-                // y += 35;
-                // }
+                JLabel memberLabel = new JLabel(info);
+                memberLabel.setBounds(10, y, 740, 30); // Width should fit panel
+                fp.add(memberLabel);
+                y += 35;
+                }
 
                 frame.setVisible(true);
                 // =================================================== In panel
                 // ===========================================================
-                panel4.removeAll(); // Clear previous labels
+                // panel4.removeAll(); // Clear previous labels
 
-                int y = 20; // Y position to stack labels vertically
-                for (FutsalMember member : members) {
-                    String info = "Name: " + member.getName() + ", ID: " + member.getId()
-                            + ", Phone: " + member.getPhoneNumber() + ", Active status: " +
-                            member.isActive()
-                            + ", Attendance: " + member.getAttendance() + ", Membership Type: "
-                            + (member instanceof RegualarMember ? "Regular" : "Premium");
-                    JLabel memberLabel = new JLabel(info);
-                    System.out.println(info);
-                    memberLabel.setBounds(20, y, 600, 30); // Adjust width as needed
-                    panel4.add(memberLabel);
-                    y += 35;
-                }
+                // int y = 20; // Y position to stack labels vertically
+                // for (FutsalMember member : members) {
+                //     String info = "Name: " + member.getName() + ", ID: " + member.getId()
+                //             + ", Phone: " + member.getPhoneNumber() + ", Active status: " +
+                //             member.isActive()
+                //             + ", Attendance: " + member.getAttendance() + ", Membership Type: "
+                //             + (member instanceof RegualarMember ? "Regular" : "Premium");
+                //     JLabel memberLabel = new JLabel(info);
+                //     System.out.println(info);
+                //     memberLabel.setBounds(20, y, 600, 30); // Adjust width as needed
+                //     panel4.add(memberLabel);
+                //     y += 35;
+                // }
 
-                panel4.revalidate(); // updates layout
-                panel4.repaint(); // redraws the updated content
+                // panel4.revalidate(); // updates layout
+                // panel4.repaint(); // redraws the updated content
             }
         });
 
