@@ -17,5 +17,6 @@ public class CastingExample {
         int i = b;
         byte c = (byte) (i + 200);
         System.out.println(c);
+
     }
 }

@@ -1,54 +1,55 @@
-package casting;
+// package casting;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
-abstract class GymMember {
-    String name;
-    public GymMember(String name) {
-        this.name = name;
-    }
-    public void allowEntery() {
-        System.out.println(this.name + " Gym ma entry garyo.");
-    }
-}
+// abstract class GymMember {
+//     String name;
+//     public GymMember(String name) {
+//         this.name = name;
+//     }
 
-class RegularMember extends GymMember {
-    public RegularMember(String name) {
-        super(name);
-    }
-    public void onlyRegularMember() {
-        System.out.println(name + " Regular member ko lagi 5% discount chha with free paani ko bottle.");
-    }
-}
+//     public void allowEntery() {
+//         System.out.println(this.name + " Gym ma entry garyo.");
+//     }
+// }
 
-class PremiumMember extends GymMember {
-    public PremiumMember(String name) {
-        super(name);
-    }
-    public void onlyPremiumMember() {
-        System.out.println(name + " Premium member ko lagi 10% discount chha with protein shake.");
-    }
-}
+// class RegularMember extends GymMember {
+//     public RegularMember(String name) {
+//         super(name);
+//     }
 
-public class Example1 {
+//     public void onlyRegularMember() {
+//         System.out.println(name + " Regular member ko lagi 5% discount chha with free paani ko bottle.");
+//     }
+// }
 
-    public static void main(String[] args) {
-        ArrayList<GymMember> members = new ArrayList<>();
-        members.add(new RegularMember("Dhiraj"));
-        members.add(new PremiumMember("Sumit"));
+// class PremiumMember extends GymMember {
+//     public PremiumMember(String name) {
+//         super(name);
+//     }
 
-        for(GymMember member: members){
-            member.allowEntery();
+//     public void onlyPremiumMember() {
+//         System.out.println(name + " Premium member ko lagi 10% discount chha with protein shake.");
+//     }
+// }
 
-            if(member instanceof RegularMember){
-                RegularMember rm = (RegularMember) member;
-                rm.onlyRegularMember();
+// public class Example1 {
+//     public static void main(String[] args) {
+//         ArrayList<GymMember> members = new ArrayList<>();
+//         members.add(new PremiumMember("Rickky"));
+//         members.add(new RegularMember("Utsasv"));
 
-            }else if(member instanceof PremiumMember){
-                PremiumMember pm = (PremiumMember) member;
-                pm.onlyPremiumMember();
+//         for(GymMember member: members){
+//             member.allowEntery();
 
-            }
-        }
-    }
-}
+//             if(member instanceof RegularMember){
+//                 RegularMember rm = (RegularMember) member;
+//                 rm.onlyRegularMember();
+
+//             }else if(member instanceof PremiumMember){
+//                 PremiumMember pm = (PremiumMember) member;
+//                 pm.onlyPremiumMember();
+//             }
+//         }
+//     }
+// }
