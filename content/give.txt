@@ -1,0 +1,56 @@
+        JFrame frame = new JFrame("Student Management System");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 500);
+        frame.setLayout(null);
+
+        JLabel idLabel = new JLabel("ID:");
+        idLabel.setBounds(50, 50, 100, 30);
+        frame.add(idLabel);
+        JTextField idField = new JTextField();
+        idField.setBounds(150, 50, 100, 30);
+        frame.add(idField);
+        JLabel nameLabel = new JLabel("Name:");
+        nameLabel.setBounds(50, 100, 100, 30);
+        frame.add(nameLabel);
+        JTextField nameField = new JTextField();
+        nameField.setBounds(150, 100, 100, 30);
+        frame.add(nameField);
+
+        //radio buttons for BBA and BIT
+        JRadioButton bbaButton = new JRadioButton("BBA");
+        bbaButton.setBounds(50, 150, 100, 30);
+        frame.add(bbaButton);
+        JRadioButton bitButton = new JRadioButton("BIT");
+        bitButton.setBounds(150, 150, 100, 30);
+        frame.add(bitButton);
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(bbaButton);
+        group.add(bitButton);
+
+        JButton addButton = new JButton("Add Student");
+        addButton.setBounds(50, 200, 150, 30);
+        frame.add(addButton);
+
+        //add button display
+        JButton displayButton = new JButton("Display Students");
+        displayButton.setBounds(50, 250, 150, 30);
+        frame.add(displayButton);
+
+        displayButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
+        //load from file button
+        JButton loadButton = new JButton("Load from File");
+        loadButton.setBounds(50, 300, 150, 30);
+        frame.add(loadButton);
+
+        //save to file button
+        JButton saveButton = new JButton("Save to File");
+        saveButton.setBounds(50, 350, 150, 30);
+        frame.add(saveButton);
+
+        frame.setVisible(true);

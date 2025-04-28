@@ -51,13 +51,12 @@ public class Example {
 
             FileWriter fWriter = new FileWriter(f);
             try {
-                // while(!list.isEmpty()) {
-                //     fWriter.write(list.get(0) + "\n");
-                //     list.remove(0);
-                // }
-                int age = 20;
-                String details = String.format("Hello my name is Anil Bhandari.\nI am a good boy.\nI am %d years old.", age);
-                fWriter.write(details);
+                while(!list.isEmpty()) {
+                    fWriter.write(list.get(0) + "\n");
+                    list.remove(0);
+                }
+                // String details = String.format("Hello my name is Anil Bhandari.\nI am a good boy.\n.", age);
+                // fWriter.write(details);
                 fWriter.close();
                 System.out.println("You sucessfully wrote on file");
             } catch (IOException e) {
