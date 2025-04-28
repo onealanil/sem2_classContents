@@ -195,6 +195,11 @@ Type casting refers to converting a variable from one data type to another. It's
    - Potential data loss
    - Order: `double -> float -> long -> int -> short -> byte`
 
+3. **Object/Reference Casting**:
+   - Converting between reference types in inheritance hierarchies
+   - Upcasting: Converting a subclass to a superclass (implicit)
+   - Downcasting: Converting a superclass to a subclass (explicit)
+
 ### Examples:
 
 #### Implicit Casting Example:
@@ -227,6 +232,61 @@ public class CastingExample {
         int i = b;          // Implicit
         byte c = (byte)(i + 200);  // Explicit
         System.out.println(c);  // Output: -56 (overflow)
+    }
+}
+```
+
+### Object Casting and instanceof Operator
+   The instanceof operator checks if an object is an instance of a specific class or interface.
+
+### Class Hierarchy Example:
+```java
+class Animal {}
+class Dog extends Animal {}
+class Cat extends Animal {}
+
+public class ClassCastingExample {
+    public static void main(String[] args) {
+        // Upcasting (implicit)
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
+        
+        // instanceof checks
+        System.out.println(animal1 instanceof Dog);    // true
+        System.out.println(animal1 instanceof Cat);    // false
+        System.out.println(animal1 instanceof Animal); // true
+        
+        // Safe downcasting with instanceof
+        if (animal1 instanceof Dog) {
+            Dog dog = (Dog) animal1;  // Downcasting (explicit)
+            System.out.println("Downcast successful");
+        }
+        
+        // Unsafe downcasting (will throw ClassCastException)
+        try {
+            Dog dog = (Dog) animal2;  // animal2 is actually a Cat
+        } catch (ClassCastException e) {
+            System.out.println("ClassCastException caught: " + e.getMessage());
+        }
+    }
+}
+```
+Pattern Matching with instanceof (Java 16+):
+```java
+public class PatternMatchingExample {
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        
+        // Old way
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;
+            // Use dog
+        }
+        
+        // New way with pattern matching
+        if (animal instanceof Dog dog) {
+            // Use dog directly
+        }
     }
 }
 ```
