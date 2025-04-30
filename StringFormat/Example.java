@@ -1,10 +1,8 @@
-// package content;
+// package StringFormat;
 
-// import java.awt.event.ActionEvent;
-// import java.awt.event.ActionListener;
+// import java.awt.event.*;
 // import java.io.FileReader;
 // import java.io.FileWriter;
-// import java.io.IOException;
 // import java.util.ArrayList;
 // import java.util.Scanner;
 // import javax.swing.ButtonGroup;
@@ -17,50 +15,49 @@
 // import javax.swing.JTextArea;
 // import javax.swing.JTextField;
 
-class Student {
+// // class Student {
 
-    protected int id;
-    protected String name;
-    protected String section;
+// //     protected int id;
+// //     protected String name;
+// //     protected String section;
 
-    public Student(int id, String name, String section) {
-        this.id = id;
-        this.name = name;
-        this.section = section;
-    }
+// //     public Student(int id, String name, String section) {
+// //         this.id = id;
+// //         this.name = name;
+// //         this.section = section;
+// //     }
 
-    public int getId() {
-        return id;
-    }
+// //     public int getId() {
+// //         return id;
+// //     }
 
-    public String getName() {
-        return name;
-    }
+// //     public String getName() {
+// //         return name;
+// //     }
 
-    public String getSection() {
-        return section;
-    }
-}
+// //     public String getSection() {
+// //         return section;
+// //     }
+// // }
 
-class BBA extends Student {
+// // class BBA extends Student {
 
-    public BBA(int id, String name, String section) {
-        super(id, name, section);
-    }
-}
+// //     public BBA(int id, String name, String section) {
+// //         super(id, name, section);
+// //     }
+// // }
 
-class BIT extends Student {
+// // class BIT extends Student {
 
-    public BIT(int id, String name, String section) {
-        super(id, name, section);
-    }
-}
+// //     public BIT(int id, String name, String section) {
+// //         super(id, name, section);
+// //     }
+// // }
 
-// public class Demo {
+// public class Example {
 
 //     public static void main(String[] args) {
 //         ArrayList<Student> students = new ArrayList<>();
-
 //         JFrame frame = new JFrame("Student Management System");
 //         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //         frame.setSize(600, 500);
@@ -100,13 +97,11 @@ class BIT extends Student {
 //                 int id = Integer.parseInt(idField.getText());
 //                 String name = nameField.getText();
 //                 String section = bbaButton.isSelected() ? "BBA" : "BIT";
-
 //                 if (bbaButton.isSelected()) {
 //                     students.add(new BBA(id, name, section));
 //                 } else if (bitButton.isSelected()) {
 //                     students.add(new BIT(id, name, section));
 //                 }
-
 //                 JOptionPane.showMessageDialog(frame, "Student Added: " + name + " (" + section + ")");
 //             }
 //         });
@@ -126,38 +121,33 @@ class BIT extends Student {
 //         JButton loadButton = new JButton("Load from File");
 //         loadButton.setBounds(50, 300, 150, 30);
 //         frame.add(loadButton);
-
-//         loadButton.addActionListener(new ActionListener(){
+//         loadButton.addActionListener(new ActionListener() {
 //             @Override
-//             public void actionPerformed(ActionEvent e){
-//                  JFrame displayFrame = new JFrame("Student Data");
-//                     displayFrame.setSize(400, 300);
-//                     displayFrame.setDefaultCloseOperation(
+//             public void actionPerformed(ActionEvent e) {
+//                 JFrame displayFrame = new JFrame("Student Data");
+//                 displayFrame.setSize(400, 300);
+//                 displayFrame.setDefaultCloseOperation(
 //                         JFrame.DISPOSE_ON_CLOSE
-//                     );
-//                     displayFrame.setVisible(true);
+//                 );
+//                 displayFrame.setVisible(true);
 
-//                     JTextArea jtArea = new JTextArea();
-//                     jtArea.setEditable(false);
-//                     jtArea.setLineWrap(true);
-//                     jtArea.setWrapStyleWord(true);
-
-//                     JScrollPane scrollPane = new JScrollPane(jtArea);
-
-//                     displayFrame.add(scrollPane);
-
-//                     try {
-//                         FileReader fr = new FileReader("studentsIIC.txt");
-//                         Scanner sc = new Scanner(fr);
-//                         while(sc.hasNextLine()){
-//                             String line = sc.nextLine();
-//                             jtArea.append(line + "\n");
-//                             System.out.println(line);
-//                         }
-//                         fr.close();
-//                     } catch (IOException ex) {
-//                         System.out.println("Error");
+//                 JTextArea jtArea = new JTextArea();
+//                 jtArea.setEditable(false);
+//                 JScrollPane scrollPane = new JScrollPane(jtArea);
+//                 displayFrame.add(scrollPane);
+//                 try {
+//                     FileReader fr = new FileReader("c12IIC.txt");
+//                     Scanner sc = new Scanner(fr);
+//                     while (sc.hasNextLine()) {
+//                         String line = sc.nextLine();
+//                         jtArea.append(line + "\n");
+//                         System.out.println(line);
 //                     }
+//                     fr.close();
+//                     sc.close();
+//                 } catch (Exception ex) {
+//                     JOptionPane.showMessageDialog(frame, "Error loading file: " + ex.getMessage());
+//                 }
 //             }
 //         });
 
@@ -165,14 +155,13 @@ class BIT extends Student {
 //         JButton saveButton = new JButton("Save to File");
 //         saveButton.setBounds(50, 350, 150, 30);
 //         frame.add(saveButton);
-
-//         //add action listener to save button
+//         //for writing in file
 //         saveButton.addActionListener(new ActionListener() {
 //             @Override
 //             public void actionPerformed(ActionEvent e) {
 //                 //save in file using string format in tabular format using string
 //                 try {
-//                     FileWriter fw = new FileWriter("studentsIIC.txt");
+//                     FileWriter fw = new FileWriter("c12IIC.txt");
 //                     fw.write("-".repeat(100) + "\n");
 //                     String heading = String.format(
 //                             "|%-5s | %-50s | %-10s |\n",
@@ -195,13 +184,35 @@ class BIT extends Student {
 //                     fw.write("-".repeat(100) + "\n");
 //                     fw.close();
 //                     JOptionPane.showMessageDialog(frame, "Students saved to file successfully.");
-//                 } catch (IOException ex) {
+//                 } catch (Exception ex) {
 //                     JOptionPane.showMessageDialog(frame, "Error saving to file: " + ex.getMessage());
 //                 }
 //             }
 //         });
 
 //         frame.setVisible(true);
-
 //     }
 // }
+
+// //   JFrame displayFrame = new JFrame("Student Data");
+// //                 displayFrame.setSize(400, 300);
+// //                 displayFrame.setDefaultCloseOperation(
+// //                         JFrame.DISPOSE_ON_CLOSE
+// //                 );
+// //                 displayFrame.setVisible(true);
+// //                 JTextArea jtArea = new JTextArea();
+// //                 jtArea.setEditable(false);
+// //                 JScrollPane scrollPane = new JScrollPane(jtArea);
+// //                 displayFrame.add(scrollPane);
+// //                 try {
+// //                     FileReader fr = new FileReader("c12IIC.txt");
+// //                     Scanner sc = new Scanner(fr);
+// //                     while (sc.hasNextLine()) {
+// //                         String line = sc.nextLine();
+// //                         jtArea.append(line + "\n");
+// //                         System.out.println(line);
+// //                     }
+// //                     fr.close();
+// //                 } catch (IOException ex) {
+// //                     System.out.println("Error");
+// //                 }

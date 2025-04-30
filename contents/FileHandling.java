@@ -1,26 +1,12 @@
-package fileHandling;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// string formatting 
-// Specifier | Description | Example Output
-// %s | String | "Anil"
-// %d | Integer | 22
-// %f | Floating point | 3.141593
-// %.2f | Float with 2 decimals | 3.14
-// %c | Character | 'A'
-// %b | Boolean | true / false
-// %n | Line break | (like \n)
-
-
-public class Example {
-
-    public static void main(String[] args) throws IOException {
-        ArrayList<String> list = new ArrayList<>();
+public class FileHandling {
+    public static void main(String[] args) {
+         ArrayList<String> list = new ArrayList<>();
         list.add("Anil");
         list.add("Bhandari");
         list.add("Nepal");
@@ -28,21 +14,21 @@ public class Example {
         list.add("Bhaktapur");
 
         try {
-            //check if the director exists
-            File directory = new File("./fileHandling/files");
-            if (!directory.exists()) {
-                //create the directory
-                if (directory.mkdir()) {
-                    System.out.println("Directory created successfully");
-                } else {
-                    System.out.println("Failed to create directory");
-                }
-            } else {
-                System.out.println("Directory already exists");
-            }
+            //to create a folder
+            // File directory = new File("./fileHandling/files");
+            // if (!directory.exists()) {
+            //     //create the directory
+            //     if (directory.mkdir()) {
+            //         System.out.println("Directory created successfully");
+            //     } else {
+            //         System.out.println("Failed to create directory");
+            //     }
+            // } else {
+            //     System.out.println("Directory already exists");
+            // }
 
-            //create a file in the directory
-            File f = new File(directory, "anil.txt");
+            //create a file
+            File f = new File("anil.txt");
             if (f.createNewFile()) {
                 System.out.println("File sucessfully created " + f.getName());
             } else {

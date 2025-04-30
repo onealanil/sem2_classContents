@@ -1,0 +1,20 @@
+1. Write a Java program to take two strings as input, compare them, and check if they are equal
+(ignoring case). Also, display both strings in uppercase and lowercase.
+
+3. Create a program using ArrayList to store names of friends. Add at least 3 names, print the list,
+then remove one name and display the updated list.
+
+4. Create a Student class with name and rollNo. Use an ArrayList<Student> to add 3 students and
+display their info using a loop.
+
+5. Create a new file "note.txt", 
+ - write  in note.txt , friend name and their fav movie in tabular format
+ --------------------------------------------------
+|Name                |Favourite Movie     |
+--------------------------------------------------
+|John                |Inception           |
+|Jane                |Interstellar        |
+--------------------------------------------------
+- Display or Read the file "note.txt" and show them in terminal.
+
+

@@ -1,62 +1,54 @@
 // package content;
 
-// import java.awt.event.ActionEvent;
-// import java.awt.event.ActionListener;
-// import java.io.FileReader;
+// import java.awt.event.*;
 // import java.io.FileWriter;
 // import java.io.IOException;
 // import java.util.ArrayList;
-// import java.util.Scanner;
 // import javax.swing.ButtonGroup;
 // import javax.swing.JButton;
 // import javax.swing.JFrame;
 // import javax.swing.JLabel;
 // import javax.swing.JOptionPane;
 // import javax.swing.JRadioButton;
-// import javax.swing.JScrollPane;
-// import javax.swing.JTextArea;
 // import javax.swing.JTextField;
 
-class Student {
+// class Student {
+//     protected int id;
+//     protected String name;
+//     protected String section;
 
-    protected int id;
-    protected String name;
-    protected String section;
+//     public Student(int id, String name, String section) {
+//         this.id = id;
+//         this.name = name;
+//         this.section = section;
+//     }
 
-    public Student(int id, String name, String section) {
-        this.id = id;
-        this.name = name;
-        this.section = section;
-    }
+//     public int getId() {
+//         return id;
+//     }
 
-    public int getId() {
-        return id;
-    }
+//     public String getName() {
+//         return name;
+//     }
 
-    public String getName() {
-        return name;
-    }
+//     public String getSection() {
+//         return section;
+//     }
+// }
 
-    public String getSection() {
-        return section;
-    }
-}
+// class BBA extends Student {
+//     public BBA(int id, String name, String section) {
+//         super(id, name, section);
+//     }
+// }
 
-class BBA extends Student {
+// class BIT extends Student {
+//     public BIT(int id, String name, String section) {
+//         super(id, name, section);
+//     }
+// }
 
-    public BBA(int id, String name, String section) {
-        super(id, name, section);
-    }
-}
-
-class BIT extends Student {
-
-    public BIT(int id, String name, String section) {
-        super(id, name, section);
-    }
-}
-
-// public class Demo {
+// public class Example {
 
 //     public static void main(String[] args) {
 //         ArrayList<Student> students = new ArrayList<>();
@@ -94,22 +86,26 @@ class BIT extends Student {
 //         JButton addButton = new JButton("Add Student");
 //         addButton.setBounds(50, 200, 150, 30);
 //         frame.add(addButton);
+
 //         addButton.addActionListener(new ActionListener() {
 //             @Override
 //             public void actionPerformed(ActionEvent e) {
 //                 int id = Integer.parseInt(idField.getText());
 //                 String name = nameField.getText();
 //                 String section = bbaButton.isSelected() ? "BBA" : "BIT";
-
+//                 Student student;
 //                 if (bbaButton.isSelected()) {
-//                     students.add(new BBA(id, name, section));
-//                 } else if (bitButton.isSelected()) {
-//                     students.add(new BIT(id, name, section));
+//                     student = new BBA(id, name, section);
+//                 } else {
+//                     student = new BIT(id, name, section);
 //                 }
-
-//                 JOptionPane.showMessageDialog(frame, "Student Added: " + name + " (" + section + ")");
+//                 students.add(student);
+//                 idField.setText("");
+//                 nameField.setText("");
+//                 JOptionPane.showMessageDialog(frame, "Student added successfully!");
 //             }
 //         });
+               
 
 //         //add button display
 //         JButton displayButton = new JButton("Display Students");
@@ -127,52 +123,17 @@ class BIT extends Student {
 //         loadButton.setBounds(50, 300, 150, 30);
 //         frame.add(loadButton);
 
-//         loadButton.addActionListener(new ActionListener(){
-//             @Override
-//             public void actionPerformed(ActionEvent e){
-//                  JFrame displayFrame = new JFrame("Student Data");
-//                     displayFrame.setSize(400, 300);
-//                     displayFrame.setDefaultCloseOperation(
-//                         JFrame.DISPOSE_ON_CLOSE
-//                     );
-//                     displayFrame.setVisible(true);
-
-//                     JTextArea jtArea = new JTextArea();
-//                     jtArea.setEditable(false);
-//                     jtArea.setLineWrap(true);
-//                     jtArea.setWrapStyleWord(true);
-
-//                     JScrollPane scrollPane = new JScrollPane(jtArea);
-
-//                     displayFrame.add(scrollPane);
-
-//                     try {
-//                         FileReader fr = new FileReader("studentsIIC.txt");
-//                         Scanner sc = new Scanner(fr);
-//                         while(sc.hasNextLine()){
-//                             String line = sc.nextLine();
-//                             jtArea.append(line + "\n");
-//                             System.out.println(line);
-//                         }
-//                         fr.close();
-//                     } catch (IOException ex) {
-//                         System.out.println("Error");
-//                     }
-//             }
-//         });
-
 //         //save to file button
 //         JButton saveButton = new JButton("Save to File");
 //         saveButton.setBounds(50, 350, 150, 30);
 //         frame.add(saveButton);
-
-//         //add action listener to save button
+//         //save to button method
 //         saveButton.addActionListener(new ActionListener() {
 //             @Override
 //             public void actionPerformed(ActionEvent e) {
-//                 //save in file using string format in tabular format using string
+//                  //save in file using string format in tabular format using string
 //                 try {
-//                     FileWriter fw = new FileWriter("studentsIIC.txt");
+//                     FileWriter fw = new FileWriter("c9Students.txt");
 //                     fw.write("-".repeat(100) + "\n");
 //                     String heading = String.format(
 //                             "|%-5s | %-50s | %-10s |\n",
@@ -202,6 +163,5 @@ class BIT extends Student {
 //         });
 
 //         frame.setVisible(true);
-
 //     }
 // }
